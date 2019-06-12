@@ -1,2 +1,2 @@
-# wenxuan-s-shell-
+# shell
 shell scripts for linnux
