@@ -17,10 +17,11 @@ cat<<-EOF
 EOF
 }
 	menu
+#循環1開始.台灣叫回圈
 while true
 	do
 		read -p "please input: "  active
-
+			#循環2開始.台灣叫回圈
 			while true
 			do
 				if [[ "$active" =~ ^[0-9]+$ ]]
@@ -29,7 +30,8 @@ while true
 				else
 					echo "error ,you must input number"
 					read -p "please input: " active
-				fi
+		fi
+			#循環2結束	
 			done
 		case $active in
 			1)
@@ -52,6 +54,9 @@ while true
 				break
 			;;
 	esac
+#循環1結束
 done
 
+		#編號1的while  :  do done循環是爲了循環菜單的。即每選擇一個選項執行后二不直接退出，而是繼續讓用戶選擇執行。
+		#編號2的while : do done 循環是爲了驗證用戶輸入選項是否爲數字
 
