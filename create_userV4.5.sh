@@ -14,7 +14,7 @@ while :
 			break
 		else
 			echo "error ,please retry"
-			read -p "please input the number: " number
+			
 		 fi
 	done
 	while :
@@ -25,7 +25,7 @@ while :
 				break
 			else 
 				echo "error,please retry !"
-				read -p "please input the prefix: "
+				
 		 fi
 		done
 	while  :
