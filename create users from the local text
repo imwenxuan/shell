@@ -1,0 +1,35 @@
+#!/usr/bin/bash
+#Author by Wenxuan
+#From the UK
+#Version 1.0
+
+
+if [ $# -eq 0 ]
+then
+        echo "error,`basename $0`"
+        exit 1
+fi
+
+if [ ! -f  $1  ]
+then
+        echo "error,must be file"
+        exit 2
+fi
+
+IFS=$'\n'
+
+for i in `cat $1`
+do
+        username=`echo "$i" | awk '{print $1}'`
+        password=`echo "$i"|awk '{print $2}'`
+        useradd $username &>/dev/null
+        #echo "$password" |passwd -stdin $username &>/dev/null
+        echo -e "$username:$password"|chpasswd &>/dev/null
+
+        chage -d 0 $username &>/dev/null
+
+        if [ $? -eq 0 ]
+        then
+                echo "ok"
+        fi
+done
