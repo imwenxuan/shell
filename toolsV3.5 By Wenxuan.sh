@@ -29,7 +29,7 @@ while true
 						break
 				else
 					echo "error ,you must input number"
-					read -p "please input: " active
+					
 		fi
 			#循環2結束	
 			done
