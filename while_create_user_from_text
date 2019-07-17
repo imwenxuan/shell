@@ -1,0 +1,39 @@
+#!/usr/bin/bash                                                                                                                                                         #Author by wenxuan                                                                                                                                                      #From the UK                                                                                                                                                                                                                                                                                                                                    if [ $# -eq 0 ]                                                                                                                                                         then                                                                                                                                                                    echo "error,`basename $0`"                                                                                                                                              exit                                                                                                                                                                                                                                                                                                                                            fi                                                                                                                                                                                                                                                                                                                                              if [ ! -f $1 ]                          #!/usr/bin/bash
+#Author by wenxuan
+#From the UK
+#參數為0則退出
+if [ $# -eq 0 ]
+        then:
+        echo "error,`basename $0`"
+        exit
+fi
+#判定位置變量的賦值是否是文件
+if [ ! -f $1 ]
+     then
+        echo "error "
+        exit
+fi
+#while囘圈從文本導入賬號和口令
+
+while  read line
+do
+        username=`echo "$line"|awk '{print $1}'`
+        password=`echo "$line"|awk '{print $2}'`
+#       echo "賬戶名是 $username"
+#       echo "口令是 $password"
+#判斷賬號是否存在
+id $username &>/dev/null
+if [ $? -eq 0 ]
+then
+        echo "The $username is exits"
+        exit
+else
+useradd $username &>/dev/null
+echo "$username":"$password"|chpasswd
+        if [ $? -eq 0 ]
+                then
+                        echo "The $user is success"
+        fi
+fi
+done < $1
+                                                                                                                                     t
