@@ -25,14 +25,14 @@ do
 id $username &>/dev/null
 if [ $? -eq 0 ]
 then
-        echo "The $username is exits"
+        echo "The $username is exists"
         exit
 else
 useradd $username &>/dev/null
 echo "$username":"$password"|chpasswd
         if [ $? -eq 0 ]
                 then
-                        echo "The $user is success"
+                        echo "The $user is created  successful"
         fi
 fi
 done < $1
