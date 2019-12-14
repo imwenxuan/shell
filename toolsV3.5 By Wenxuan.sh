@@ -20,19 +20,20 @@ EOF
 #循環1開始.台灣叫回圈
 while true
 	do
-		read -p "please input: "  active
-			#循環2開始.台灣叫回圈
+		#循環2開始.台灣叫回圈
 			while true
-			do
-				if [[ "$active" =~ ^[0-9]+$ ]]
-					then
-						break
-				else
-					echo "error ,you must input number"
-					
-		fi
-			#循環2結束	
-			done
+				do
+					read -p "please input: "  active
+
+							if [[ "$active" =~ ^[0-9]+$ ]]
+								then
+									break
+							else
+								echo "error ,you must input number"
+
+					fi
+						#循環2結束	
+				done
 		case $active in
 			1)
 				clear
