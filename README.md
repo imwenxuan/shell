@@ -1,2 +1,2 @@
 # shell
-shell scripts for linnux
+shell scripts for linux
