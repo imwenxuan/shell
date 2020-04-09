@@ -10,8 +10,8 @@ do
 		then
 		break
 	else
-		echo "error"
-		  read  -p  "please input the number: "   number
+		echo "error,please retry"
+		 
 	fi
 done
 
@@ -23,8 +23,8 @@ read  -p   "please input the prefix: "   prefix
 		then
 		break
 	else
-		echo "error"
-		read  -p   "please input the prefix: "   prefix
+		echo "error,please retry"
+		
 	
 	
 	fi
